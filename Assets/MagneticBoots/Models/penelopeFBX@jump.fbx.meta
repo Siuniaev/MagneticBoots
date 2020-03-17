@@ -1,0 +1,933 @@
+fileFormatVersion: 2
+guid: c5544289ebdc14117a0a089ccd2fe678
+ModelImporter:
+  serializedVersion: 25
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: constraint_grp
+  - first:
+      1: 100002
+    second: geo
+  - first:
+      1: 100004
+    second: head_anim
+  - first:
+      1: 100006
+    second: head_ctrl
+  - first:
+      1: 100008
+    second: ikHandle1
+  - first:
+      1: 100010
+    second: l_ankle_anim
+  - first:
+      1: 100012
+    second: l_arm_ik
+  - first:
+      1: 100014
+    second: l_arm_ik_ctrl
+  - first:
+      1: 100016
+    second: l_ball_anim
+  - first:
+      1: 100018
+    second: l_ball_anim_ik
+  - first:
+      1: 100020
+    second: l_ball_anim_ik_grp
+  - first:
+      1: 100022
+    second: l_ball_ik
+  - first:
+      1: 100024
+    second: l_ball_pivot
+  - first:
+      1: 100026
+    second: l_clavice_ctrl
+  - first:
+      1: 100028
+    second: l_clavicle_anim
+  - first:
+      1: 100030
+    second: l_elbow_anim
+  - first:
+      1: 100032
+    second: l_elbow_anim_fk
+  - first:
+      1: 100034
+    second: l_elbow_anim_ik
+  - first:
+      1: 100036
+    second: l_elbow_ctrl
+  - first:
+      1: 100038
+    second: l_foot_ctrl
+  - first:
+      1: 100040
+    second: l_knee_anim
+  - first:
+      1: 100042
+    second: l_knee_const_grp
+  - first:
+      1: 100044
+    second: l_knee_ctrl
+  - first:
+      1: 100046
+    second: l_leg_ik
+  - first:
+      1: 100048
+    second: l_shoulder_anim
+  - first:
+      1: 100050
+    second: l_shoulder_anim_fk
+  - first:
+      1: 100052
+    second: l_shoulder_anim_ik
+  - first:
+      1: 100054
+    second: l_shoulder_const_grp
+  - first:
+      1: 100056
+    second: l_toe_anim_ik
+  - first:
+      1: 100058
+    second: l_toe_ik
+  - first:
+      1: 100060
+    second: l_toe_ik_pivot
+  - first:
+      1: 100062
+    second: l_toe_pivot
+  - first:
+      1: 100064
+    second: l_upper_leg_anim
+  - first:
+      1: 100066
+    second: l_wrist_anim
+  - first:
+      1: 100068
+    second: l_wrist_anim_fk
+  - first:
+      1: 100070
+    second: l_wrist_anim_ik
+  - first:
+      1: 100072
+    second: misc_rig_ctrl
+  - first:
+      1: 100074
+    second: pelvis_anim
+  - first:
+      1: 100076
+    second: pelvis_ctrl
+  - first:
+      1: 100078
+    second: //RootNode
+  - first:
+      1: 100080
+    second: position_ctrl
+  - first:
+      1: 100082
+    second: r_ankle_anim
+  - first:
+      1: 100084
+    second: r_arm_ik_ctrl
+  - first:
+      1: 100086
+    second: r_ball_anim
+  - first:
+      1: 100088
+    second: r_ball_anim_ik
+  - first:
+      1: 100090
+    second: r_ball_anim_ik_grp
+  - first:
+      1: 100092
+    second: r_ball_ik
+  - first:
+      1: 100094
+    second: r_ball_pivot
+  - first:
+      1: 100096
+    second: r_clavice_ctrl
+  - first:
+      1: 100098
+    second: r_clavicle_anim
+  - first:
+      1: 100100
+    second: r_clavicle_orient
+  - first:
+      1: 100102
+    second: r_elbow_anim
+  - first:
+      1: 100104
+    second: r_elbow_anim_fk
+  - first:
+      1: 100106
+    second: r_elbow_anim_ik
+  - first:
+      1: 100108
+    second: r_elbow_ctrl
+  - first:
+      1: 100110
+    second: r_foot_ctrl
+  - first:
+      1: 100112
+    second: r_knee_anim
+  - first:
+      1: 100114
+    second: r_knee_const_grp
+  - first:
+      1: 100116
+    second: r_knee_ctrl
+  - first:
+      1: 100118
+    second: r_leg_ik
+  - first:
+      1: 100120
+    second: r_shoulder_anim
+  - first:
+      1: 100122
+    second: r_shoulder_anim_fk
+  - first:
+      1: 100124
+    second: r_shoulder_anim_ik
+  - first:
+      1: 100126
+    second: r_shoulder_const_grp
+  - first:
+      1: 100128
+    second: r_toe_anim_ik
+  - first:
+      1: 100130
+    second: r_toe_ik
+  - first:
+      1: 100132
+    second: r_toe_ik_pivot
+  - first:
+      1: 100134
+    second: r_toe_pivot
+  - first:
+      1: 100136
+    second: r_upper_leg_anim
+  - first:
+      1: 100138
+    second: r_wrist_anim
+  - first:
+      1: 100140
+    second: r_wrist_anim_fk
+  - first:
+      1: 100142
+    second: r_wrist_anim_ik
+  - first:
+      1: 100144
+    second: root_anim
+  - first:
+      1: 100146
+    second: root_ctrl
+  - first:
+      1: 100148
+    second: spinea_anim
+  - first:
+      1: 100150
+    second: spinea_ctrl
+  - first:
+      1: 100152
+    second: spineb_anim
+  - first:
+      1: 100154
+    second: spineb_ctrl
+  - first:
+      1: 100156
+    second: taila_anim
+  - first:
+      1: 100158
+    second: taila_ctrl
+  - first:
+      1: 100160
+    second: taila_orient_grp
+  - first:
+      1: 100162
+    second: tailb_anim
+  - first:
+      1: 100164
+    second: tailb_ctrl
+  - first:
+      1: 100166
+    second: tailb_orient_grp
+  - first:
+      4: 400000
+    second: constraint_grp
+  - first:
+      4: 400002
+    second: geo
+  - first:
+      4: 400004
+    second: head_anim
+  - first:
+      4: 400006
+    second: head_ctrl
+  - first:
+      4: 400008
+    second: ikHandle1
+  - first:
+      4: 400010
+    second: l_ankle_anim
+  - first:
+      4: 400012
+    second: l_arm_ik
+  - first:
+      4: 400014
+    second: l_arm_ik_ctrl
+  - first:
+      4: 400016
+    second: l_ball_anim
+  - first:
+      4: 400018
+    second: l_ball_anim_ik
+  - first:
+      4: 400020
+    second: l_ball_anim_ik_grp
+  - first:
+      4: 400022
+    second: l_ball_ik
+  - first:
+      4: 400024
+    second: l_ball_pivot
+  - first:
+      4: 400026
+    second: l_clavice_ctrl
+  - first:
+      4: 400028
+    second: l_clavicle_anim
+  - first:
+      4: 400030
+    second: l_elbow_anim
+  - first:
+      4: 400032
+    second: l_elbow_anim_fk
+  - first:
+      4: 400034
+    second: l_elbow_anim_ik
+  - first:
+      4: 400036
+    second: l_elbow_ctrl
+  - first:
+      4: 400038
+    second: l_foot_ctrl
+  - first:
+      4: 400040
+    second: l_knee_anim
+  - first:
+      4: 400042
+    second: l_knee_const_grp
+  - first:
+      4: 400044
+    second: l_knee_ctrl
+  - first:
+      4: 400046
+    second: l_leg_ik
+  - first:
+      4: 400048
+    second: l_shoulder_anim
+  - first:
+      4: 400050
+    second: l_shoulder_anim_fk
+  - first:
+      4: 400052
+    second: l_shoulder_anim_ik
+  - first:
+      4: 400054
+    second: l_shoulder_const_grp
+  - first:
+      4: 400056
+    second: l_toe_anim_ik
+  - first:
+      4: 400058
+    second: l_toe_ik
+  - first:
+      4: 400060
+    second: l_toe_ik_pivot
+  - first:
+      4: 400062
+    second: l_toe_pivot
+  - first:
+      4: 400064
+    second: l_upper_leg_anim
+  - first:
+      4: 400066
+    second: l_wrist_anim
+  - first:
+      4: 400068
+    second: l_wrist_anim_fk
+  - first:
+      4: 400070
+    second: l_wrist_anim_ik
+  - first:
+      4: 400072
+    second: misc_rig_ctrl
+  - first:
+      4: 400074
+    second: pelvis_anim
+  - first:
+      4: 400076
+    second: pelvis_ctrl
+  - first:
+      4: 400078
+    second: //RootNode
+  - first:
+      4: 400080
+    second: position_ctrl
+  - first:
+      4: 400082
+    second: r_ankle_anim
+  - first:
+      4: 400084
+    second: r_arm_ik_ctrl
+  - first:
+      4: 400086
+    second: r_ball_anim
+  - first:
+      4: 400088
+    second: r_ball_anim_ik
+  - first:
+      4: 400090
+    second: r_ball_anim_ik_grp
+  - first:
+      4: 400092
+    second: r_ball_ik
+  - first:
+      4: 400094
+    second: r_ball_pivot
+  - first:
+      4: 400096
+    second: r_clavice_ctrl
+  - first:
+      4: 400098
+    second: r_clavicle_anim
+  - first:
+      4: 400100
+    second: r_clavicle_orient
+  - first:
+      4: 400102
+    second: r_elbow_anim
+  - first:
+      4: 400104
+    second: r_elbow_anim_fk
+  - first:
+      4: 400106
+    second: r_elbow_anim_ik
+  - first:
+      4: 400108
+    second: r_elbow_ctrl
+  - first:
+      4: 400110
+    second: r_foot_ctrl
+  - first:
+      4: 400112
+    second: r_knee_anim
+  - first:
+      4: 400114
+    second: r_knee_const_grp
+  - first:
+      4: 400116
+    second: r_knee_ctrl
+  - first:
+      4: 400118
+    second: r_leg_ik
+  - first:
+      4: 400120
+    second: r_shoulder_anim
+  - first:
+      4: 400122
+    second: r_shoulder_anim_fk
+  - first:
+      4: 400124
+    second: r_shoulder_anim_ik
+  - first:
+      4: 400126
+    second: r_shoulder_const_grp
+  - first:
+      4: 400128
+    second: r_toe_anim_ik
+  - first:
+      4: 400130
+    second: r_toe_ik
+  - first:
+      4: 400132
+    second: r_toe_ik_pivot
+  - first:
+      4: 400134
+    second: r_toe_pivot
+  - first:
+      4: 400136
+    second: r_upper_leg_anim
+  - first:
+      4: 400138
+    second: r_wrist_anim
+  - first:
+      4: 400140
+    second: r_wrist_anim_fk
+  - first:
+      4: 400142
+    second: r_wrist_anim_ik
+  - first:
+      4: 400144
+    second: root_anim
+  - first:
+      4: 400146
+    second: root_ctrl
+  - first:
+      4: 400148
+    second: spinea_anim
+  - first:
+      4: 400150
+    second: spinea_ctrl
+  - first:
+      4: 400152
+    second: spineb_anim
+  - first:
+      4: 400154
+    second: spineb_ctrl
+  - first:
+      4: 400156
+    second: taila_anim
+  - first:
+      4: 400158
+    second: taila_ctrl
+  - first:
+      4: 400160
+    second: taila_orient_grp
+  - first:
+      4: 400162
+    second: tailb_anim
+  - first:
+      4: 400164
+    second: tailb_ctrl
+  - first:
+      4: 400166
+    second: tailb_orient_grp
+  - first:
+      43: 4300000
+    second: geo
+  - first:
+      74: 7400000
+    second: Take 001
+  - first:
+      111: 11100000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: root_anim
+  - first:
+      137: 13700002
+    second: geo
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert5
+    second: {fileID: 2100000, guid: 5f3e7d2ae731ceb4d9c729fee32b196f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 3
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'spineb_anim' has translation animation that
+      will be discarded.\n\t'spineb_anim' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\t'head_anim' has translation animation
+      that will be discarded.\n\t'l_clavicle_anim' has translation animation that
+      will be discarded.\n\t'r_clavicle_anim' has translation animation that will
+      be discarded.\n\t'pelvis_anim' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: jump
+      takeName: Take 001
+      internalID: 7400000
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 1
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: root_anim
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_upper_leg_anim
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_upper_leg_anim
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_knee_anim
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_knee_anim
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_ankle_anim
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_ankle_anim
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: spinea_anim
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: head_anim
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_clavicle_anim
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_clavicle_anim
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_shoulder_anim
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_shoulder_anim
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_elbow_anim
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_elbow_anim
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_wrist_anim
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_wrist_anim
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_ball_anim
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_ball_anim
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: penelopeFBX(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: geo
+      parentName: penelopeFBX(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: root_anim
+      parentName: penelopeFBX(Clone)
+      position: {x: -0, y: 0.8061908, z: -0.113276966}
+      rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: spinea_anim
+      parentName: root_anim
+      position: {x: -0.1608641, y: 3.5719006e-17, z: 0}
+      rotation: {x: 0, y: 0.049365427, z: -0, w: 0.9987808}
+      scale: {x: 1, y: 1, z: 1}
+    - name: spineb_anim
+      parentName: spinea_anim
+      position: {x: -0.21898267, y: 4.838693e-17, z: -2.7755576e-17}
+      rotation: {x: -2.775558e-17, y: 0.16143027, z: 5.2909066e-17, w: 0.9868841}
+      scale: {x: 1, y: 1, z: 1}
+    - name: head_anim
+      parentName: spineb_anim
+      position: {x: -0.14476998, y: 3.054871e-17, z: 0}
+      rotation: {x: -0.14845808, y: -0.14845808, z: 0.6913467, w: 0.6913467}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_clavicle_anim
+      parentName: spineb_anim
+      position: {x: -0.04362684, y: -0.097886205, z: 0.0010703219}
+      rotation: {x: 0.58240056, y: 0.8005488, z: 0.08305419, w: 0.114163645}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_shoulder_anim
+      parentName: l_clavicle_anim
+      position: {x: -0.11865732, y: -1.110223e-16, z: -8.326673e-17}
+      rotation: {x: 0.00079290906, y: 0.00017371765, z: 0.13227218, w: 0.9912131}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_elbow_anim
+      parentName: l_shoulder_anim
+      position: {x: -0.24027847, y: 0, z: 0}
+      rotation: {x: -0.053600147, y: -0.037030924, z: 0.0153934015, w: 0.99775696}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_wrist_anim
+      parentName: l_elbow_anim
+      position: {x: -0.24079189, y: 0, z: -7.2858386e-17}
+      rotation: {x: 0.817467, y: 0.57119614, z: -0.04241095, w: -0.06069641}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_clavicle_anim
+      parentName: spineb_anim
+      position: {x: -0.04362539, y: 0.0978862, z: 0.0010709539}
+      rotation: {x: -0.08305209, y: -0.114164874, z: 0.5823931, w: 0.8005542}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_shoulder_anim
+      parentName: r_clavicle_anim
+      position: {x: 0.11865516, y: 0.000002133565, z: -0.00000045320542}
+      rotation: {x: 0.00079320377, y: 0.00017492473, z: 0.13228333, w: 0.9912116}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_elbow_anim
+      parentName: r_shoulder_anim
+      position: {x: 0.2402798, y: -0.00000040615797, z: -0.000000022343034}
+      rotation: {x: -0.05360002, y: -0.03703039, z: 0.015391847, w: 0.99775696}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_wrist_anim
+      parentName: r_elbow_anim
+      position: {x: 0.2407919, y: 0.0000002727627, z: 0.00000030283599}
+      rotation: {x: 0.817467, y: 0.57119614, z: -0.04241095, w: -0.06069641}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pelvis_anim
+      parentName: root_anim
+      position: {x: 0.036446486, y: -8.0927455e-18, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: taila_anim
+      parentName: pelvis_anim
+      position: {x: -2.9274135e-32, y: -0.026366914, z: -0.12361581}
+      rotation: {x: -0.13843125, y: -0.693424, z: 0.13843125, w: 0.693424}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tailb_anim
+      parentName: taila_anim
+      position: {x: -0.25424695, y: -1.110223e-16, z: -5.6454164e-17}
+      rotation: {x: -1.1702943e-25, y: -2.9846255e-17, z: -0.11948052, w: 0.99283653}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_upper_leg_anim
+      parentName: pelvis_anim
+      position: {x: 0.100633, y: -0.06681532, z: -0.0054760347}
+      rotation: {x: -0.033414215, y: -0.033414215, z: -0.7063169, w: 0.7063169}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_knee_anim
+      parentName: r_upper_leg_anim
+      position: {x: 0.19194628, y: -1.3877788e-17, z: 0.0000004891848}
+      rotation: {x: 0.000000012845142, y: 0.09603305, z: -0.0000000012392859, w: 0.9953782}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_ankle_anim
+      parentName: r_knee_anim
+      position: {x: 0.35421932, y: -8.382184e-15, z: -0.00000032553913}
+      rotation: {x: -0.6078724, y: -0.3612355, z: -0.36123547, w: 0.6078725}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_ball_anim
+      parentName: r_ankle_anim
+      position: {x: 0.20255074, y: 0.00000015630438, z: 1.3877788e-16}
+      rotation: {x: -0.20769218, y: -0.67591715, z: -0.20769218, w: 0.67591715}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_upper_leg_anim
+      parentName: pelvis_anim
+      position: {x: -0.10063296, y: -0.06681545, z: -0.0054760305}
+      rotation: {x: 0.7063169, y: 0.7063169, z: -0.03341422, w: 0.03341422}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_knee_anim
+      parentName: l_upper_leg_anim
+      position: {x: -0.19194613, y: -2.7755576e-17, z: -6.938894e-18}
+      rotation: {x: 0, y: 0.09603305, z: -0, w: 0.9953782}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_ankle_anim
+      parentName: l_knee_anim
+      position: {x: -0.35421938, y: 0, z: -5.551115e-17}
+      rotation: {x: -0.6078725, y: -0.36123547, z: -0.36123547, w: 0.6078725}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_ball_anim
+      parentName: l_ankle_anim
+      position: {x: -0.20255083, y: 2.7755576e-17, z: 3.9119873e-17}
+      rotation: {x: -0.20769218, y: -0.67591715, z: -0.20769218, w: 0.67591715}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: e07487a3ebfb84a3b984d64790b354b6,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
