@@ -4,3 +4,5 @@ Unity Asset with the character controller script that allows the character to wa
 
 Click on the [video link](https://vimeo.com/129642273) to see how the project works:
 [![Video](https://i32.servimg.com/u/f32/11/33/69/31/magnet10.png)](https://vimeo.com/129642273)
+
+> The project used models and textures with a free license for use and distribution.
