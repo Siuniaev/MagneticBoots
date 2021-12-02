@@ -6,15 +6,19 @@
 [RequireComponent(typeof(CapsuleCollider), typeof(Rigidbody))]
 public class MagneticCharacterController : MonoBehaviour
 {
-    public const float DEFAULT_MOVEMENT_SPEED = 2f;
-    public const float DEFAULT_ROTATION_SPEED = 100f;
-    public const float DEFAULT_MAGNETIC_ROTATION_SPEED_GROUNDED = 10f;
-    public const float DEFAULT_MAGNETIC_ROTATION_SPEED_FLYING = 0.5f;
-    public const float DEFAULT_GRAVITY_SPEED = 500f;
-    public const float DEFAULT_JUMP_FORCE = 500f;
-    public const float SPHERECAST_DISTANCE = 5f;
-    public const float DEFAULT_RIGIDBODY_ANGULAR_DRAG = 100f;
-    public const int LAYER_EVERYTHING = 0;
+    private const float DEFAULT_MOVEMENT_SPEED = 2f;
+    private const float DEFAULT_ROTATION_SPEED = 100f;
+    private const float DEFAULT_MAGNETIC_ROTATION_SPEED_GROUNDED = 10f;
+    private const float DEFAULT_MAGNETIC_ROTATION_SPEED_FLYING = 0.5f;
+    private const float DEFAULT_GRAVITY_SPEED = 500f;
+    private const float DEFAULT_JUMP_FORCE = 500f;
+    private const float SPHERECAST_DISTANCE = 5f;
+    private const float DEFAULT_RIGIDBODY_ANGULAR_DRAG = 100f;
+    private const int LAYER_EVERYTHING = 0;
+
+    private static readonly int isJumping = Animator.StringToHash("IsJumping");
+    private static readonly int rotatingSpeed = Animator.StringToHash("RotatingSpeed");
+    private static readonly int walkingSpeed = Animator.StringToHash("WalkingSpeed");
 
     [SerializeField] private float movementSpeed = DEFAULT_MOVEMENT_SPEED;
     [SerializeField] private float rotationSpeed = DEFAULT_ROTATION_SPEED;
@@ -24,7 +28,7 @@ public class MagneticCharacterController : MonoBehaviour
     [SerializeField] private float jumpForce = DEFAULT_JUMP_FORCE;
 
     [Header("Layers on which the character can walk.")]
-    [SerializeField] private LayerMask RayCastLayerMask = ~LAYER_EVERYTHING;
+    [SerializeField] private LayerMask rayCastLayerMask = ~LAYER_EVERYTHING;
 
     private float currentMagneticRotationSpeed;
     private bool isGrounded;
@@ -42,7 +46,7 @@ public class MagneticCharacterController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
 
-        if (animator == null)
+        if (!animator)
             Debug.LogError($"Missing reference at {nameof(animator)}.");
 
         rigidbody.useGravity = false;
@@ -76,15 +80,20 @@ public class MagneticCharacterController : MonoBehaviour
     {
         // Forward and backward movement.
         var inputVertical = Input.GetAxis("Vertical");
-        animator?.SetFloat("WalkingSpeed", inputVertical);
-        var positionOffset = transform.forward * inputVertical * movementSpeed;
+
+        if (animator)
+            animator.SetFloat(walkingSpeed, inputVertical);
+
+        var positionOffset = transform.forward * (inputVertical * movementSpeed);
         var targetPosition = transform.position + positionOffset;
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.fixedDeltaTime);
 
         // Jumping.
         if (Input.GetKeyDown("space") && isGrounded)
         {
-            animator?.SetBool("IsJumping", true);
+            if (animator)
+                animator.SetBool(isJumping, true);
+
             rigidbody.AddForce(transform.up * jumpForce);
             isGrounded = false;
             currentMagneticRotationSpeed = magneticRotationSpeedFly;
@@ -98,7 +107,10 @@ public class MagneticCharacterController : MonoBehaviour
     {
         // Left and right turn in place.
         var inputHorizontal = Input.GetAxis("Horizontal");
-        animator?.SetFloat("RotatingSpeed", inputHorizontal);
+
+        if (animator)
+            animator.SetFloat(rotatingSpeed, inputHorizontal);
+
         var rotationOffset = Quaternion.AngleAxis(inputHorizontal * rotationSpeed, Vector3.up);
         var targetRotation = transform.rotation * rotationOffset;
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime);
@@ -122,16 +134,16 @@ public class MagneticCharacterController : MonoBehaviour
     {
         closestSphereCastHit = null;
 
-        if (Physics.SphereCast(transform.position, collider.radius, -transform.up + transform.forward, out RaycastHit hitForward, SPHERECAST_DISTANCE, RayCastLayerMask))
+        if (Physics.SphereCast(transform.position, collider.radius, -transform.up + transform.forward, out RaycastHit hitForward, SPHERECAST_DISTANCE, rayCastLayerMask))
             closestSphereCastHit = hitForward;
 
-        if (Physics.SphereCast(transform.position, collider.radius, -transform.up, out RaycastHit hitDown, SPHERECAST_DISTANCE, RayCastLayerMask))
+        if (Physics.SphereCast(transform.position, collider.radius, -transform.up, out RaycastHit hitDown, SPHERECAST_DISTANCE, rayCastLayerMask))
         {
             if (!closestSphereCastHit.HasValue || closestSphereCastHit.Value.distance > hitDown.distance)
                 closestSphereCastHit = hitDown;
         }
 
-        if (Physics.SphereCast(transform.position, collider.radius, -transform.up - transform.forward, out RaycastHit hitBack, SPHERECAST_DISTANCE, RayCastLayerMask))
+        if (Physics.SphereCast(transform.position, collider.radius, -transform.up - transform.forward, out RaycastHit hitBack, SPHERECAST_DISTANCE, rayCastLayerMask))
         {
             if (!closestSphereCastHit.HasValue || closestSphereCastHit.Value.distance > hitBack.distance)
                 closestSphereCastHit = hitBack;
@@ -147,7 +159,7 @@ public class MagneticCharacterController : MonoBehaviour
     /// </summary>
     private void Gravitate()
     {
-        rigidbody.AddForce(-transform.up * Time.deltaTime * gravitySpeed);
+        rigidbody.AddForce(-transform.up * (Time.deltaTime * gravitySpeed));
     }
 
     /// <summary>
@@ -157,15 +169,17 @@ public class MagneticCharacterController : MonoBehaviour
     private void OnCollisionEnter(Collision collided)
     {
         // Checks if the character is collide with objects on which he can walk.
-        if (((1 << collided.gameObject.layer) & RayCastLayerMask) == 0)
+        if (((1 << collided.gameObject.layer) & rayCastLayerMask) == 0)
             return;
 
-        animator?.SetBool("IsJumping", false);
+        if (animator)
+            animator.SetBool(isJumping, false);
+
         isGrounded = true;
         currentMagneticRotationSpeed = magneticRotationSpeedGrounded;
 
         // Stick to animated platform.
-        if (collided.gameObject.tag == "StickyPlatform")
+        if (collided.gameObject.CompareTag("StickyPlatform"))
             transform.SetParent(collided.transform);
     }
 
@@ -176,7 +190,7 @@ public class MagneticCharacterController : MonoBehaviour
     private void OnCollisionExit(Collision collided)
     {
         // Unstick to animated platform.
-        if (collided.gameObject.tag == "StickyPlatform")
+        if (collided.gameObject.CompareTag("StickyPlatform"))
             transform.SetParent(null);
     }
 }

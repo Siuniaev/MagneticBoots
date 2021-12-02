@@ -5,10 +5,10 @@
 /// </summary>
 public class MagneticFollower : MonoBehaviour
 {
-    public const float DEFAULT_DAMP_POSITION = 100f;
-    public const float DEFAULT_DAMP_ROTATION = 100f;
-    public const float DEFAULT_FOLLOWER_HEIGHT = 1f;
-    public const float DEFAULT_FOLLOWER_DISTANCE = 5f;
+    private const float DEFAULT_DAMP_POSITION = 100f;
+    private const float DEFAULT_DAMP_ROTATION = 100f;
+    private const float DEFAULT_FOLLOWER_HEIGHT = 1f;
+    private const float DEFAULT_FOLLOWER_DISTANCE = 5f;
 
     [SerializeField] private float dampPosition = DEFAULT_DAMP_POSITION;
     [SerializeField] private float dampRotation = DEFAULT_DAMP_ROTATION;
