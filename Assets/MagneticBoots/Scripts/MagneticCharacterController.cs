@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /// <summary>
 /// Controls the character by magnetizing to nearby objects that he can walk on.
@@ -74,6 +75,23 @@ public class MagneticCharacterController : MonoBehaviour
     }
 
     /// <summary>
+    /// Is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    private void Update()
+    {
+        // Jumping.
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            if (animator)
+                animator.SetBool(isJumping, true);
+
+            rigidbody.AddForce(transform.up * jumpForce);
+            isGrounded = false;
+            currentMagneticRotationSpeed = magneticRotationSpeedFly;
+        }
+    }
+
+    /// <summary>
     /// Moves the character using user's input.
     /// </summary>
     private void Move()
@@ -87,17 +105,6 @@ public class MagneticCharacterController : MonoBehaviour
         var positionOffset = transform.forward * (inputVertical * movementSpeed);
         var targetPosition = transform.position + positionOffset;
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.fixedDeltaTime);
-
-        // Jumping.
-        if (Input.GetKeyDown("space") && isGrounded)
-        {
-            if (animator)
-                animator.SetBool(isJumping, true);
-
-            rigidbody.AddForce(transform.up * jumpForce);
-            isGrounded = false;
-            currentMagneticRotationSpeed = magneticRotationSpeedFly;
-        }
     }
 
     /// <summary>
