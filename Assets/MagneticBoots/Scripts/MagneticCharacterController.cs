@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Controls the character by magnetizing to nearby objects that he can walk on.
@@ -37,6 +36,7 @@ public class MagneticCharacterController : MonoBehaviour
     private new CapsuleCollider collider;
     private Animator animator;
     private RaycastHit? closestSphereCastHit;
+    private bool isJumpStarted;
 
     /// <summary>
     /// Is called when the script instance is being loaded.
@@ -69,6 +69,7 @@ public class MagneticCharacterController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        Jump();
         Rotate();
         MagneticRotate();
         Gravitate();
@@ -77,18 +78,15 @@ public class MagneticCharacterController : MonoBehaviour
     /// <summary>
     /// Is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
-    private void Update()
-    {
-        // Jumping.
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            if (animator)
-                animator.SetBool(isJumping, true);
+    private void Update() => DetectJump();
 
-            rigidbody.AddForce(transform.up * jumpForce);
-            isGrounded = false;
-            currentMagneticRotationSpeed = magneticRotationSpeedFly;
-        }
+    /// <summary>
+    ///  Detects jump start.
+    /// </summary>
+    private void DetectJump()
+    {
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+            isJumpStarted = true;
     }
 
     /// <summary>
@@ -105,6 +103,23 @@ public class MagneticCharacterController : MonoBehaviour
         var positionOffset = transform.forward * (inputVertical * movementSpeed);
         var targetPosition = transform.position + positionOffset;
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.fixedDeltaTime);
+    }
+
+    /// <summary>
+    /// Makes the character jump if the jump button was pressed.
+    /// </summary>
+    private void Jump()
+    {
+        if (!isJumpStarted || !isGrounded)
+            return;
+
+        if (animator)
+            animator.SetBool(isJumping, true);
+
+        currentMagneticRotationSpeed = magneticRotationSpeedFly;
+        rigidbody.AddForce(transform.up * jumpForce);
+        isGrounded = false;
+        isJumpStarted = false;
     }
 
     /// <summary>
@@ -164,10 +179,8 @@ public class MagneticCharacterController : MonoBehaviour
     /// <summary>
     /// Moves the character by the gravity force.
     /// </summary>
-    private void Gravitate()
-    {
+    private void Gravitate() =>
         rigidbody.AddForce(-transform.up * (Time.deltaTime * gravitySpeed));
-    }
 
     /// <summary>
     /// Is called when this collider/rigidbody has begun touching another rigidbody/collider.
